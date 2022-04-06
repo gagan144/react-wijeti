@@ -166,6 +166,11 @@ If you are using git clone of this project, follow the following steps:
 ## Development
 Change component code while running storybook and observe the changes in the browser.
 
+## Code Formatting
+Using prettier:
+```shell
+prettier --write .
+```
 
 ## Build
 Run the following command to build your library
