@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+
+    // Skips type checking of declaration files. This can save time during compilation.
+    "skipLibCheck": true,
+
+    "jsx": "react",
+
+    // Indicates that we will be compiling the code into the latest version
+    // of JavaScript (ES6 and above, so you can use import statements).
+    "module": "ESNext",
+
+    "declaration": true,
+    "declarationDir": "types",
+
+    // Tells the compiler that we want source map generation. A source map
+    // is a file that maps the transformed source to the original source,
+    // which enables the browser to present the reconstructed original in the debugger.
+    "sourceMap": true,
+
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+
+  // Avoid transpiling specified directories and files
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+  ],
+}
