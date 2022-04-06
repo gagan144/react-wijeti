@@ -1,6 +1,52 @@
 # React Wijeti
 ReactJS useful components and utilities.
 
+
+## Directory Structure
+```text
+<library-root>/
+    |--- package.json       # Package json
+    |--- tsconfig.json      # Typescript config
+    |--- rollup.config.js   # Roll up config
+    |--- .storybook/        # Storybook config
+    |--- src/
+           |--- index.ts
+           |--- components/
+                   |--- index.ts         # Include all components here
+                   |--- <my-component>/  # Custom component
+                             |--- <my-component>.types.ts
+                             |--- <my-component>.css
+                             |--- <my-component>.tsx
+                             |--- <my-component>.stories.tsx
+                             |--- index.ts
+```
+
+## Setup
+If you are using git clone of this project, follow the following steps:
+
+- **Install npm dependencies**
+  ```shell
+  npm install
+  ```
+
+- **Build library**
+  ```shell
+  npm run build
+  ```
+  The above command will generate a directory called `dist`,
+  which is our build directory defined in the Rollup configurations.
+
+- **Run Storybook**
+  ```shell
+  npm run storybook
+  ```
+  Open browser and got to http://localhost:6006/
+
+  <br/>
+
+  ![Storybook](_docs/images/storybook-screenshot.png)
+
+
 ## How this library was created?
 **References**:
 - https://blog.logrocket.com/build-component-library-react-typescript/
@@ -64,15 +110,17 @@ ReactJS useful components and utilities.
   - Create a `rollup.config.js` file in the root of our project.
 
 - **Edit `package.json`**
-  ```json
-  ...
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  ...
-  "scripts": {
+  ```text
+  {
     ...
-    "build": "rollup -c",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
     ...
+    "scripts": {
+      ...
+      "build": "rollup -c",
+      ...
+    }
   }
   ```
 
@@ -115,47 +163,22 @@ ReactJS useful components and utilities.
   Open browser and got to http://localhost:6006/
 
 
-## Setup
-If you are using git clone of this project, follow the following steps:
-
-- **Install npm dependencies**
-  ```shell
-  npm install
-  ```
-
-- **Run Storybook**
-  ```shell
-  npm run storybook
-  ```
-  Open browser and got to http://localhost:6006/
-
-  <br/>
-
-  ![Storybook](_docs/images/storybook-screenshot.png)
-
-
 ## Development
 Change component code while running storybook and observe the changes in the browser.
 
-## Directory Structure
-```text
-<library-root>/
-    |--- package.json       # Package json
-    |--- tsconfig.json      # Typescript config
-    |--- rollup.config.js   # Roll up config
-    |--- .storybook/        # Storybook config
-    |--- src/
-           |--- index.ts
-           |--- components/
-                   |--- index.ts         # Include all components here
-                   |--- <my-component>/  # Custom component
-                             |--- <my-component>.types.ts
-                             |--- <my-component>.css
-                             |--- <my-component>.tsx
-                             |--- <my-component>.stories.tsx
-                             |--- index.ts
-```
 
-## Author
-Gagandeep Singh
-<br/>singh.gagan144@gmail.com
+## Build
+Run the following command to build your library
+```shell
+npm run build
+```
+The build files will be created inside `<library-root>/dist`
+
+
+## Testing with Jest and React Testing Library
+(Coming Soon)
+
+
+## Packaging and publishing to npm
+(Coming Soon)
+
